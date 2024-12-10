@@ -1489,12 +1489,13 @@ getgenv().getscriptclosure = function(module)
         return copy
     end
 end
-print("Have fun!")
+print("Sylph X Team")
 if not shared.notified then 
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Sylph X Injected",
-        Text = "Powered by Sylph X Team",  
+        Title = "Sylph X",
+        Text = "Successfully attached!",  
         Duration = 2,
+        Icon = "rbxassetid://<131488939667746>"
     })
     shared.notified = true 
 end 
