@@ -1,11 +1,11 @@
 
-getgenv().IS_SALAD_LOADED = false
+getgenv().IS_SYLPHX_LOADED = false
 local oldr = request 
 getgenv().request = function(options)
 	if options.Headers then
-		options.Headers["User-Agent"] = "Salad/RobloxApp/2.1"
+		options.Headers["User-Agent"] = "SylphX/RobloxApp/2.1"
 	else
-		options.Headers = {["User-Agent"] = "Salad/RobloxApp/2.1"}
+		options.Headers = {["User-Agent"] = "SylphX/RobloxApp/2.1"}
 	end
 	local response = oldr(options)
 	return response
@@ -1316,7 +1316,7 @@ if not shared.vulnsm then
 			meta.__index = function(s,k)
 				if table.find(vulnFuncTbl, k) then 
 					return function()
-						error("[ Salad ]: "..tostring(k).." isn't available.")
+						error("Sylph X: "..tostring(k).." isn't available.")
 					end
 				elseif k == "GetObjects" or k == "LoadLocalAsset" or k == "LoadAsset" then
 					return function(self, id)
@@ -1498,4 +1498,4 @@ if not shared.notified then
     })
     shared.notified = true 
 end 
-getgenv().IS_SALAD_LOADED = true
+getgenv().IS_SYLPHX_LOADED = true
