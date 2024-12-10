@@ -30,7 +30,7 @@ getgenv().require = function(scr) -- not mine
 	assert(type(scr) == "number" or (typeof(scr) == "Instance" and scr.ClassName == "ModuleScript"), "Expected")
 	if (type(scr) == "number") then 
 		if not game:GetObjects('rbxassetid://' .. scr)[1] then 
-			warn("[ Salad ]: Require failed: invalid asset ID")
+			warn("Sylph X: Require failed: invalid asset ID")
 			return 
 		end
 		if typeof(game:GetObjects('rbxassetid://' .. scr)[1]) == "Instance" and game:GetObjects('rbxassetid://' .. scr)[1].ClassName == "ModuleScript" then
@@ -38,10 +38,10 @@ getgenv().require = function(scr) -- not mine
 				if game:GetObjects('rbxassetid://' .. scr)[1].Source ~= "" then 
 					return loadstring(game:GetObjects('rbxassetid://' .. scr)[1].Source)()
 				else 
-					warn("[ Salad ]: Require failed: cant require a modulescript with no code")
+					warn("Sylph X: Require failed: cant require a modulescript with no code")
 				end
 			else 
-				warn("[ Salad ]: Require failed: require asset id failed")
+				warn("Sylph X: Require failed: require asset id failed")
 			end
 		end
 		return
@@ -186,9 +186,9 @@ end, function()
 end)
 
 check("getaffiliateid", function()
-    return "Salad"
+    return "Sylph X"
 end, function()
-    assert(getgenv().getaffiliateid() == "Salad", "getaffiliateid function test failed")
+    assert(getgenv().getaffiliateid() == "Sylph X", "getaffiliateid function test failed")
 end)
 
 check("getplayer", function(name: string)
@@ -873,7 +873,7 @@ function Bridge:InternalRequest(body, timeout)
 			return
 		end
 
-		error("[Salad Error]: Unknown error", 2)
+		error("Sylph X Error: Unknown error", 2)
 		return
 	end
 
@@ -907,10 +907,10 @@ function Bridge:InternalRequest(body, timeout)
 	end)
 
 	if success and result then
-		error("[Salad Error]: " .. tostring(result), 2)
+		error("Sylph X Error: " .. tostring(result), 2)
 	end
 
-	error("[Salad Error]: Unknown server error", 2)
+	error("Sylph X Error: Unknown server error", 2)
 end
 
 function Bridge:request(options)
@@ -941,7 +941,7 @@ function Bridge:request(options)
 	end
 	return {
 		Success = false,
-		StatusMessage = "[Salad Error]: webServer connection failed:  " .. self.serverUrl,
+		StatusMessage = "Sylph X Error: webServer connection failed:  " .. self.serverUrl,
 		StatusCode = 599;
 		HttpError = Enum.HttpError.ConnectFail
 	}
@@ -982,17 +982,17 @@ if not shared.vulnsm then
 	end
 	getgenv().rconsoleclear = function()
 		Bridge:rconsole("cls") 
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	
 	getgenv().rconsolecreate = function()
 		Bridge:rconsole("crt")
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	
 	getgenv().rconsoledestroy = function()
 		Bridge:rconsole("dst")
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	
 	getgenv().rconsoleprint = function(...)
@@ -1001,7 +1001,7 @@ if not shared.vulnsm then
 			text = text .. tostring(v) .. " "
 		end
 		Bridge:rconsole("prt", text)
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	
 	getgenv().rconsoleinfo = function(...)
@@ -1010,7 +1010,7 @@ if not shared.vulnsm then
 			text = text .. tostring(v) .. " "
 		end
 		Bridge:rconsole("prt", "[ INFO ] " .. text)
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	
 	getgenv().rconsolewarn = function(...)
@@ -1019,15 +1019,15 @@ if not shared.vulnsm then
 			text = text .. tostring(v) .. " "
 		end
 		Bridge:rconsole("prt", "[ WARNING ] " .. text)
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	getgenv().rconsoleinput = function(text)
 		Bridge:rconsole("prt", "[ ERROR ] Input doesnt work")
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end
 	getgenv().rconsoleerr = function(text)
 		Bridge:rconsole("prt", "[ ERROR ] " .. text)
-		rconsolesettitle("Salad is NOT fat!")
+		rconsolesettitle("I warn you (jk)")
 	end 
 	getgenv().rconsoleerror = getgenv().rconsoleerr 
 	getgenv().rconsolename = getgenv().rconsolesettitle
@@ -1413,7 +1413,7 @@ if not shared.vulnsm then
 			return oldlf(path)
 		end 
 	end
-	print("[ Salad ]: Vulns mitigated.")
+	print("Sylph X successfully attached to roblox!")
 	shared.vulnsm = true 
 end 
 getgenv().getscripts = function() 
@@ -1489,7 +1489,7 @@ getgenv().getscriptclosure = function(module)
         return copy
     end
 end
-print("[ Salad ]: Added functions to the env.")
+print("Have fun!")
 if not shared.notified then 
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Sylph X Injected",
