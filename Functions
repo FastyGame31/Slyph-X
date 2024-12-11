@@ -1495,7 +1495,7 @@ if not shared.notified then
         Title = "Sylph X",
         Text = "Successfully attached!",  
         Duration = 2,
-        Icon = "rbxassetid://<131488939667746>"
+        Icon = "rbxassetid://<81782148737381>"
     })
     shared.notified = true 
 end 
